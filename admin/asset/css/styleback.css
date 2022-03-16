@@ -1,0 +1,403 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/*************************/
+/***** *FONT IMPORT ******/
+/*************************/
+@font-face {
+  font-family: 'Montserrat-Medium';
+  src: url('../../../public/asset/font/Montserrat-Medium.woff2') format('woff2'),
+       url('../../../public/asset/font/Montserrat-Medium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Montserrat-MediumItalic';
+  src: url('../../../public/asset/font/Montserrat-MediumItalic.woff2') format('woff2'),
+       url('../../../public/asset/font/Montserrat-MediumItalic.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Montserrat-Thin';
+  src: url('../../../public/asset/font/Montserrat-Thin.woff2') format('woff2'),
+       url('../../../public/asset/font/Montserrat-Thin.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Montserrat-ThinItalic';
+  src: url('../../../public/asset/font/Montserrat-ThinItalic.woff2') format('woff2'),
+       url('../../../public/asset/font/Montserrat-ThinItalic.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*************************/
+/***** variables CSS *****/
+/*************************/
+:root {
+  --white: #ffffff;
+  --black: #000000;
+
+  --vert: #7fa43c;
+  --marron: #5b3a2c;
+  --vertclair: #d6e2b6;
+  --creme: #ebedd4;
+  --vertfonce: #162721;
+}
+.dataTables_filter {
+  display: none;
+}
+
+/**/
+h1 {
+  font-family: 'Montserrat-Medium';
+  font-weight: bold;
+  text-align: center;
+  color: var(--black);
+  font-size: 2rem;
+}
+h2 {
+  color: var(--black);
+}
+p {
+  text-align: center;
+}
+p,
+label {
+  font-family: 'Montserrat-Medium';
+  color: var(--black);
+}
+
+
+/* flash_in */
+.alert {
+  position: relative;
+  padding: .75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  margin-bottom: 0;
+}
+
+/* footer */
+footer {
+  background: var(--vertfonce);
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  height: 8vh;
+  padding: 30px 0 0 0;
+  margin-top: 30px;
+}
+
+.footerP {
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+/******************************/
+/***** DASHBOARD index.php *****/
+/*******************************/
+#bodyIndex {
+  background: var(--vertclair);
+  height: 100vh;
+  width: 100vw;
+  padding-top: 150px;
+}
+.mainIndex {
+  width: 80%;
+  margin: auto;
+}
+/* navbar logo */
+.navAdmin {
+  width: 100vw;
+  height: 10vh;
+  background: var(--vertfonce);
+  padding-top: 10px;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+}
+.navAdmin img {
+  width: 100px;
+  position: absolute;
+  left: 47%;
+}
+/* left navbar */
+.navigation {
+  position: fixed;
+  top: 10%;
+  width: 60px;
+  height: 100%;
+  background: var(--vertfonce);
+  transition: 0.5s;
+  overflow: hidden;
+  z-index: 200;
+}
+.navigation:hover,
+.navigation.active {
+  width: 300px;
+}
+.navigation ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.navigation ul li {
+  position: relative;
+  width: 100%;
+  list-style: none;
+}
+.navigation ul li:hover {
+  background: var(--vert);
+}
+.navigation ul li a {
+  position: relative;
+  display: block;
+  width: 100%;
+  display: flex;
+  text-decoration: none;
+  color: var(--white);
+}
+.navigation ul li a .icon {
+  position: relative;
+  display: block;
+  min-width: 60px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+}
+.navigation ul li a .icon .fa {
+  font-size: 24px;
+}
+.navigation ul li a .title {
+  position: relative;
+  display: block;
+  padding: 0 10px;
+  height: 60px;
+  line-height: 60px;
+  text-align: start;
+  white-space: nowrap;
+}
+.toggle {
+  position: absolute;
+  position: fixed;
+  top: 10%;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  background: var(--vertfonce);
+  cursor: pointer;
+  z-index: 50;
+}
+.toggle.active {
+  background: var(--vert);
+}
+.toggle:before {
+  content: '\f0c9';
+  font-family: fontAwesome;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  line-height: 60px;
+  text-align: center;
+  font-size: 24px;
+  color: var(--white);
+}
+.toggle.active:before {
+  content: '\f00d';
+}
+/*******************************/
+/***** CONNEXION login.php *****/
+/*******************************/
+.loginIcon{
+  color: var(--white);
+}
+#loginTitle {
+  color: var(--white);
+  margin-top: 100px;
+  text-align: center;
+}
+#loginBody {
+  background: url('../img/footer.jpg') no-repeat 0 0 / cover;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+#loginBody::before {
+  /* image de fond > calque > texte */
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--black);
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+}
+#loginBody > * {
+  position: relative;
+  z-index: 5;
+}
+
+.loginLogo {
+  width: 180px;
+  top: 8%;
+  position: absolute;
+  margin-bottom: 40px;
+}
+.formBoxes {
+  position: absolute;
+  margin-top: 250px;
+  height: inherit;
+}
+
+.formBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: var(--vertfonce);
+  height: 70vh;
+  margin: 100px auto;
+  border-radius: 3%;
+}
+.labelLogin {
+  color: var(--white);
+}
+
+/******************************************************************/
+/***** Demande de réinitialisation du mdp requestpassword.php *****/
+/******************************************************************/
+.requestContainer,
+.requestMain,
+.requestBody{
+  background: var(--vertclair);
+}
+.requestBox{
+  background: var(--white);
+  border-radius : 10px;
+  height: 5vh;
+}
+.requestBox:focus{
+  box-shadow:0 0 10px 3px var(--vert);
+}
+/**********************************************/
+/***** AFFICHAGE DES AVIS reviewtable.php *****/
+/*********************************************/
+#bodyFeedback{
+  background: var(--vertclair);
+  height: 100%;
+  width: 100%;
+  margin-top: 150px;
+  position: relative;
+}
+.mainFeedback {
+  margin: auto;
+}
+.feedback-p {
+  color: var(--black);
+}
+.edit {
+  width: 180px;
+}
+.titleFeedbacks {
+  margin-bottom: 30px;
+}
+.imgfeedback {
+  width: 200px;
+}
+/*****************************************/
+/***** AJOUTER UN AVIS addreview.php *****/
+/*****************************************/
+#addBody {
+  background: var(--vertclair);
+  height: 100vh;
+  width: 100vw;
+  padding-top: 150px;
+}
+.mainAdd {
+  margin: auto;
+}
+.formAdd {
+  margin-top: 100px;
+}
+.addp label {
+  color: var(--black);
+}
+/*******************************************/
+/***** MODIFIER UN AVIS editreview.php *****/
+/*******************************************/
+#bodyEdit {
+  background: var(--vertclair);
+  height: 100vh;
+  width: 100vw;
+  padding-top: 150px;
+}
+.mainEdit {
+  margin: auto;
+}
+#preview{
+  width: 350px;
+}
+/*************************************/
+/***** ESPACE MEMBRE manager.php *****/
+/*************************************/
+#bodyManager{
+  background: var(--vertclair);
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+#bodyProfile {
+  background: var(--vertclair);
+  height: 100vh;
+  width: 100vw;
+  padding-top: 150px;
+}
+.mainProfile {
+  margin: auto;
+  width: 100%;
+}
+.mailManager{
+  margin-top: 3rem;
+}
+
+/* RESPONSIVE */
+@media only screen and (min-width: 500px) {
+  .navAdmin img {
+    width: 80px;
+  }
+}
+@media only screen and (max-width: 1800px) {
+  .navAdmin img {
+    width: 80px;
+  }
+}
+@media (width: 1920px) {
+  .navAdmin img {
+    width: 100px;
+  }
+}
+@media (max-width: 767px) {
+  .navigation {
+    left: -60px;
+  }
+  .navigation.active {
+    left: 0px;
+    width: 100%;
+  }
+  .navAdmin img {
+    width: 80px;
+  }
+}
